@@ -1,0 +1,53 @@
+﻿@model hafta_8_emlak_b.Models.Elektronik.Kulaklik
+@{
+    ViewData["Title"] = "Kulaklık Ekle";
+}
+
+<h3 class="text-center text-danger">Yeni Kulaklık Bilgilerini Giriniz</h3>
+
+@{
+    var btlar = ViewBag.Bluetoothlar as List<hafta_8_emlak_b.Models.Elektronik.Bluetooth>;
+    var mikrofonlar = ViewBag.Mikrofonlar as List<hafta_8_emlak_b.Models.Elektronik.Mikrofon>;
+}
+
+<form asp-controller="Elektronik" asp-action="KulaklikEkle" method="post" class="p-2">
+    <div class="m-2">
+        <label>Ürün Adı</label>
+        <input class="form-control" asp-for="kulaklikAdi"/>
+    </div>
+
+    <div class="m-2">
+        <label>Fiyatı</label>
+        <input class="form-control" asp-for="fiyat"/>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="sesCikisId" asp-items="@(new SelectList(ViewBag.SesCikislar, "sesCikisId", "sesCikisTur"))">
+            <option value="">-- Ses Çıkış Türü --</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="baglantiTipId" asp-items="@(new SelectList(ViewBag.BaglantiTipler, "baglantiTipId", "baglatiTipi"))">
+            <option value="">-- Bağlantı Türü --</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Bluetooth</label>
+        <input type="checkbox" asp-for="Bluetooth.btVar"/>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="btStandartId" asp-items="@(new SelectList(ViewBag.BtStandartlar, "btStandartId", "btStandart"))">
+            <option value="">-- Bluetooth Versiyon --</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Mikrofon</label>
+        <input type="checkbox" asp-for="Mikrofon.mikrofonVar" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

@@ -1,0 +1,47 @@
+﻿@model hafta_8_emlak_b.Models.SporSalonu.SporSalonu
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+<h3 class="text-center text-danger">Yeni Salon Bilgilerini Giriniz</h3>
+
+<form asp-controller="SporSalonu" asp-action="Ekle" method="post" class="p-2">
+    <div class="m-2">
+        <label>Salon Adını Giriniz:</label>
+        <input class="form-control" asp-for="salonAdi" />
+    </div>
+
+    <div class="m-2">
+        <label>Üyelik Tipini Seçiniz</label>
+        <select class="form-control" asp-for="uyelikId" asp-items="@(new SelectList(ViewBag.UyelikTipler, "uyelikId", "uyelikAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>Aktivite Tipini Seçiniz</label>
+        <select class="form-control" asp-for="aktiviteId" asp-items="@(new SelectList(ViewBag.Aktiviteler, "aktiviteId", "aktiviteAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>Olanakları Seçiniz</label>
+        <select class="form-control" asp-for="olanakId" asp-items="@(new SelectList(ViewBag.Olanaklar, "olanakId", "olanakAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>İl Seçiniz</label>
+        <select class="form-control" id="sehir" onchange="getIlceler()" asp-items="@(new SelectList(ViewBag.Sehirler, "Plaka", "SehirAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>İlçe Seçiniz</label>
+        <select class="form-control" id="ilce" asp-for="ilceId">
+            <option value="">İlçe Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Salon Aylık Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="fiyat" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>

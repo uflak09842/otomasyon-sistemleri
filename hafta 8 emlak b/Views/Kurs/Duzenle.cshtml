@@ -1,0 +1,40 @@
+﻿@model hafta_8_emlak_b.Models.Kurs.Kurs
+@{
+    ViewData["Title"] = "Düzenle";
+}
+
+<h3 class="text-center text-danger">Kurs Bilgilerini Güncelle</h3>
+
+<form asp-controller="Kurs" asp-action="Duzenle" method="post" class="p-2">
+    <input type="hidden" asp-for="kursId"/>
+    <div class="m-2">
+        <label>Kurs Adını Giriniz:</label>
+        <input class="form-control" asp-for="kursAdi" />
+    </div>
+
+    <div class="m-2">
+        <label>Kurs Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="fiyat" />
+    </div>
+
+    <div class="m-2">
+        <label>Sınıf Seçiniz</label>
+        <select class="form-control" asp-for="sinifId" asp-items="@(new SelectList(ViewBag.Siniflar, "sinifId", "sinifAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>İl Seçiniz</label>
+        <select class="form-control" id="sehir" onchange="getIlceler()" asp-items="@(new SelectList(ViewBag.Sehirler, "Plaka", "SehirAdi"))">
+            <option value="@ViewBag.SeciliSehirId">@ViewBag.SeciliSehirAd</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>İlçe Seçiniz</label>
+        <select class="form-control" id="ilce" asp-for="ilceId">
+            <option value="@ViewBag.SeciliIlceId">@ViewBag.SeciliIlceAd</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

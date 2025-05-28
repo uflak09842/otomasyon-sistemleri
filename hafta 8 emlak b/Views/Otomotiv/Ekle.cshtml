@@ -1,0 +1,65 @@
+﻿@model hafta_8_emlak_b.Models.Otomotiv.Otomotiv
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+<h3 class="text-center text-danger">Yeni Araç Bilgilerini Giriniz</h3>
+
+<form asp-controller="Otomotiv" asp-action="Ekle" method="post" class="p-2">
+    <div class="m-2">
+        <label>Araç Adını Giriniz:</label>
+        <input class="form-control" asp-for="otoAd" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Yılını Giriniz</label>
+        <input class="form-control" asp-for="otoYil" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Kilometresini Giriniz</label>
+        <input class="form-control" asp-for="otoKm" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Rengini Giriniz</label>
+        <input class="form-control" asp-for="otoRenk" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="otoFiyat" />
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="markaId" asp-items="@(new SelectList(ViewBag.Markalar, "markaId", "markaAd"))">
+            <option value="">Araç Markasını Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="vitesId" asp-items="@(new SelectList(ViewBag.Vitesler, "vitesId", "vitesAdi"))">
+            <option value="">Vites Türünü Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="yakitId" asp-items="@(new SelectList(ViewBag.Yakitlar, "yakitId", "yakitName"))">
+            <option value="">Yakıt Türünü Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" id="sehir" onchange="getIlceler()" asp-items="@(new SelectList(ViewBag.Sehirler, "Plaka", "SehirAdi"))">
+            <option value="">İl Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" id="ilce" asp-for="ilceId">
+            <option value="">İlçe Seçiniz</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yeni Araç Kaydet</button>
+</form>

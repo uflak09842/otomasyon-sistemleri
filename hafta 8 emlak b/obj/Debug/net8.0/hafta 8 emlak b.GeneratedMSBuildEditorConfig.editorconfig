@@ -1,0 +1,149 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = hafta_8_emlak_b
+build_property.RootNamespace = hafta_8_emlak_b
+build_property.ProjectDir = C:\Users\user_0\Desktop\githuba düzenle ekle\gelişmiş emlakçı otomasyonu ödev\hafta8\hafta 8 emlak b\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\user_0\Desktop\githuba düzenle ekle\gelişmiş emlakçı otomasyonu ödev\hafta8\hafta 8 emlak b
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xFa2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/KulaklikDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xLdWxha2xpa0R1emVubGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/KulaklikEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xLdWxha2xpa0VrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/Kulakliklar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xLdWxha2xpa2xhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/TelefonDuzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xUZWxlZm9uRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/TelefonEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xUZWxlZm9uRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Elektronik/Telefonlar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxla3Ryb25pa1xUZWxlZm9ubGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Emlak/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1sYWtcRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Emlak/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1sYWtcRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Emlak/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1sYWtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/IkinciEl/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWtpbmNpRWxcRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/IkinciEl/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWtpbmNpRWxcRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/IkinciEl/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWtpbmNpRWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Kurs/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vyc1xEdXplbmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Kurs/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vyc1xFa2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Kurs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Otomotiv/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RvbW90aXZcRHV6ZW5sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Otomotiv/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RvbW90aXZcRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Otomotiv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RvbW90aXZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/SporSalonu/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvclNhbG9udVxEdXplbmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/SporSalonu/Ekle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvclNhbG9udVxFa2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/SporSalonu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvclNhbG9udVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user_0/Desktop/githuba düzenle ekle/gelişmiş emlakçı otomasyonu ödev/hafta8/hafta 8 emlak b/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-n7yulbs83o

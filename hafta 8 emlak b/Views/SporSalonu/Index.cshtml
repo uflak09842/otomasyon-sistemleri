@@ -1,0 +1,96 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.SporSalonu.SporSalonu>
+@{
+    ViewData["Title"] = "Spor Salonu";
+}
+
+<h4 class="text-black">Tabloyu Filtrele</h4>
+
+<form asp-controller="SporSalonu" asp-action="Index">
+    <label>Şehir</label>
+    <select id="sehir" class="form-control m-2" onchange="getIlceler()">
+        <option value="">Tüm Şehirler</option>
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <option value="@sehir.Plaka">@sehir.SehirAdi</option>
+        }
+    </select>
+
+
+    <label>İlçe</label>
+    <select id="ilce" class="form-control m-2" name="ilceId">
+        <option value="">Tüm İlçeler</option>
+    </select>
+
+    <select name="uyelikId" class="form-control m-2">
+        <option value="">Üyelikler</option>
+        @foreach (var item in ViewBag.UyelikTipler)
+        {
+            <option value="@item.uyelikId">@item.uyelikAdi</option>
+        }
+    </select>
+
+    <select name="aktiviteId" class="form-control m-2">
+        <option value="">Aktiviteler</option>
+        @foreach (var item in ViewBag.Aktiviteler)
+        {
+            <option value="@item.aktiviteId">@item.aktiviteAdi</option>
+        }
+    </select>
+
+    <select name="olanakId" class="form-control m-2">
+        <option value="">Olanaklar</option>
+        @foreach (var item in ViewBag.Olanaklar)
+        {
+            <option value="@item.olanakId">@item.olanakAdi</option>
+        }
+    </select>
+
+    <label>Fiyat Aralığı</label>
+    <input type="text" name="minFiyat" class="form-control m-2" />
+    <input type="text" name="maxFiyat" class="form-control m-2" />
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<h3 class="text-center">Spor Salonları</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Salon adı</th>
+            <th>Üyelik</th>
+            <th>Aktiviteler</th>
+            <th>Olanaklar</th>
+            <th>İli</th>
+            <th>ilçesi</th>
+            <th>Fiyatı</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.salonAdi</td>
+                <td>@item.UyelikTip.uyelikAdi</td>
+                <td>@item.Aktivite.aktiviteAdi</td>
+                <td>@item.Olanak.olanakAdi</td>
+                <td>@item.Ilce.Sehir.SehirAdi</td>
+                <td>@item.Ilce.ilceAdi</td>
+                <td>@item.fiyat</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Duzenle", "SporSalonu", new{salonId=item.salonId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Sil", "SporSalonu", new{salonId=item.salonId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="m-4">
+    <a class="btn btn-danger" asp-controller="SporSalonu" asp-action="Ekle" asp-area="">Yeni Salon Ekle</a>
+</div>

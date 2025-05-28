@@ -1,0 +1,125 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.Elektronik.Telefon>
+
+<form asp-controller="Elektronik" asp-action="Telefonlar" method="get">
+    <a class="btn btn-dark" asp-controller="Elektronik" asp-action="Index" asp-area="">Geri</a>
+    <select name="marka" class="form-control m-2">
+        <option value="">Tüm Markalar</option>
+        @foreach (var item in ViewBag.TelMarkalar)
+        {
+            <option value="@item.telMarkaId">@item.telMarkaAdi</option>
+        }
+    </select>
+
+    <select name="depolama" class="form-control m-2">
+        <option value="">Tüm Depolama Seçenekleri</option>
+        @foreach (var item in ViewBag.Depolamalar)
+        {
+            <option value="@item.depolamaId">@item.depolamaAdi</option>
+        }
+    </select>
+
+    <select name="ram" class="form-control m-2">
+        <option value="">Tüm Ram Seçenekleri</option>
+        @foreach (var item in ViewBag.Ramler)
+        {
+            <option value="@item.ramId">@item.ramMiktari</option>
+        }
+    </select>
+
+    <select name="batarya" class="form-control m-2">
+        <option value="">Tüm Batarya Seçenekleri</option>
+        @foreach (var item in ViewBag.Bataryalar)
+        {
+            <option value="@item.bataryaId">@item.bataryaMiktarı</option>
+        }
+    </select>
+
+    <select name="besG" class="form-control m-2">
+        <option value="">5G Seçiniz</option>
+        <option value="true">Var</option>
+        <option value="false">Yok</option>
+    </select>
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<a class="btn btn-danger" asp-controller="Elektronik" asp-action="TelefonEkle" asp-area="">Yeni Telefon Ekle</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Telefon Adı</th>
+            <th>Telefon Markası</th>
+            <th>Depolama</th>
+            <th>Ram</th>
+            <th>Batarya</th>
+            <th>Hat Türü</th>
+            <th>Hızlı Şarj</th>
+            <th>5G</th>
+            <th>Su Dayanıklılığı</th>
+            <th>Suya Dayanıklılık Sertifikasi</th>
+            <th>İşlemci Hızı</th>
+            <th>Kamera Çözünürlüğü</th>
+            <th>Ekran Çözünürlüğü</th>
+            <th>Parmak İzi Okuyucu</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var telefon in Model)
+        {
+            <tr>
+                <td>@telefon.telAdi</td>
+                <td>@telefon.TelMarka.telMarkaAdi</td>
+                <td>@telefon.Depolama.depolamaAdi GB</td>
+                <td>@telefon.Ram.ramMiktari GB</td>
+                <td>@telefon.Batarya.bataryaMiktarı Mah</td>
+                <td>@telefon.Hat.hatTur</td>
+                @if (telefon.HizliSarj.hSarjVar)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                @if (telefon.Compability5G.comp5GVar)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                @if (telefon.Su.suDayananikli)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                <td>@telefon.SuSertifika.suSertifikaAdi</td>
+                <td>@telefon.CpuHz.cpuHz Mhz</td>
+                <td>@telefon.KameraCoz.kameraCoz Mp</td>
+                <td>@telefon.EkranCoz.ekranCozYatay x @telefon.EkranCoz.ekranCozDikey</td>
+                @if (telefon.ParmakIzi.parmakIziVar)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                <td>@telefon.fiyat ₺</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("TelefonDuzenle", "Elektronik", new{telefonId=telefon.telId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("TelefonSil", "Elektronik", new{telefonId=telefon.telId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

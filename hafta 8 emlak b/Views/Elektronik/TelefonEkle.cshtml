@@ -1,0 +1,108 @@
+﻿@model hafta_8_emlak_b.Models.Elektronik.Telefon
+@{
+    ViewData["Title"] = "Telefon Ekle";
+}
+
+<h3 class="text-center text-danger">Yeni Telefon Bilgilerini Giriniz</h3>
+
+@{
+    var hizliSarjlar = ViewBag.HizliSarjlar as List<hafta_8_emlak_b.Models.Elektronik.HizliSarj>;
+    var compabilityg5Gler = ViewBag.Compability5Gler as List<hafta_8_emlak_b.Models.Elektronik.Compability5G>;
+    var suDayan = ViewBag.Sular as List<hafta_8_emlak_b.Models.Elektronik.Su>;
+}
+
+<form asp-controller="Elektronik" asp-action="TelefonEkle" method="post" class="p-2">
+    <div>
+        <div class="m-2">
+        <label>Ürün Adını Giriniz</label>
+        <input class="form-control" asp-for="telAdi"/>
+    </div>
+
+    <div class="m-2">
+        <label>Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="fiyat"/>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="telMarkaId" asp-items="@(new SelectList(ViewBag.TelMarkalar, "telMarkaId", "telMarkaAdi"))">
+            <option value="">Marka Seçin</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="depolamaId" asp-items="@(new SelectList(ViewBag.Depolamalar, "depolamaId", "depolamaAdi"))">
+            <option value="">Depolama Seçin (GB)</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="ramId" asp-items="@(new SelectList(ViewBag.Ramler, "ramId", "ramMiktari"))">
+            <option value="">Ram Seçin (GB)</option>
+        </select>
+    </div
+
+    <div class="m-2">
+        <select class="form-control" asp-for="bataryaId" asp-items="@(new SelectList(ViewBag.Bataryalar, "bataryaId", "bataryaMiktarı"))">
+            <option value="">Batarya Seçin (Mah)</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="hatId" asp-items="@(new SelectList(ViewBag.Hatlar, "hatId", "hatTur"))">
+            <option value="">Hat Seçin</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Hızlı Şarj</label>
+        <input type="checkbox" asp-for="HizliSarj.hSarjVar"/>
+    </div>
+
+    <div class="m-2">
+        <label>5G Desteği</label>
+        <input type="checkbox" asp-for="Compability5G.comp5GVar"/>
+    </div>
+
+    <div class="m-2">
+        <label>Suya Dayanıklı</label>
+        <input type="checkbox" asp-for="Su.suDayananikli"/>
+    </div>
+
+    <div class="m-2">
+        <label>Suya Dayanıklılık Sertifikası</label>
+        <select class="form-control" asp-for="suSertifikaId" asp-items="@(new SelectList(ViewBag.SuSertifikalar, "suSertifikaId", "suSertifikaAdi"))">
+            <option value="">Lütfen Sertifika Seçin</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="cpuHzId" asp-items="@(new SelectList(ViewBag.CpuHzler, "cpuHzId", "cpuHz"))">
+            <option value="">İşlemci Hızı Seçin (Mhz)</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <select class="form-control" asp-for="kameraCozId" asp-items="@(new SelectList(ViewBag.KameraCozler, "kameraCozId", "kameraCoz"))">
+            <option value="">Kamera Çözünürlüğü Seçin (Mp)</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Yatay Ekran Çözünürlüğü</label>
+        <input class="form-control" asp-for="EkranCoz.ekranCozYatay"/>
+    </div>
+
+    <div class="m-2">
+        <label>Dikey Ekran Çözünürlüğü</label>
+        <input class="form-control" asp-for="EkranCoz.ekranCozDikey"/>
+    </div>
+
+    <div class="m-2">
+        <label>Parmak İzi Okuyucusu</label>
+        <input type="checkbox" asp-for="ParmakIzi.parmakIziVar"/>
+    </div>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Yeni Telefon Kaydet</button>
+</form>

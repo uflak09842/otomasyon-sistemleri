@@ -1,0 +1,42 @@
+﻿@model hafta_8_emlak_b.Models.Emlak.Emlak
+@{
+    ViewData["Title"] = "Emlağı Düzenle";
+}
+
+<h3 class="text-center text-capitalize">Seçili Emlak Bilgilerini Güncelle</h3>
+
+<form class="p-3" asp-controller="Emlak" asp-action="Duzenle" method="post">
+    <input type="hidden" asp-for="EmlakId" />
+
+    <div class="m-2">
+        <label>Emlak Adını Giriniz:</label>
+        <input class="form-control" asp-for="EmlakAdi" />
+    </div>
+
+    <div class="m-2">
+        <label>Emlak Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="Fiyat" />
+    </div>
+
+    <div class="m-2">
+        <label>Emlak Kategorisini Seçiniz</label>
+        <select class="form-control" asp-for="KatId" asp-items="@(new SelectList(ViewBag.Kategoriler, "KatId", "KatAdi"))"></select>
+    </div>
+
+    <div class="m-2">
+        <label>İl Seçiniz</label>
+        <select class="form-control" id="sehir" onchange="getIlceler()" asp-items="@(new SelectList(ViewBag.Sehirler, "Plaka", "SehirAdi"))">
+            <option value="@ViewBag.SeciliSehirId">@ViewBag.SeciliSehirAd</option>
+
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>İlçe Seçiniz</label>
+        <select class="form-control" id="ilce" asp-for="ilceId">
+            <option value="@ViewBag.SeciliIlceId">@ViewBag.SeciliIlceAd</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+</form>

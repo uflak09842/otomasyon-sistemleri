@@ -1,0 +1,77 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.Kurs.Kurs>
+@{
+    ViewData["Title"] = "Kurs";
+}
+
+<h4 class="text-black">Tabloyu Filtrele</h4>
+
+<form asp-controller="Kurs" asp-action="Index">
+    <label>Şehir</label>
+    <select id="sehir" class="form-control m-2" onchange="getIlceler()">
+        <option value="">Tüm Şehirler</option>
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <option value="@sehir.Plaka">@sehir.SehirAdi</option>
+        }
+    </select>
+
+
+    <label>İlçe</label>
+    <select id="ilce" class="form-control m-2" name="ilceId">
+        <option value="">Tüm İlçeler</option>
+    </select>
+
+    <label>Sınıf</label>
+    <select name="sinifId" class="form-control m-2">
+        <option value="">Siniflar</option>
+        @foreach (var item in ViewBag.Siniflar)
+        {
+            <option value="@item.sinifId">@item.sinifAdi</option>
+        }
+    </select>
+
+    <label>Fiyat Aralığı</label>
+    <input type="text" name="minFiyat" class="form-control m-2" />
+    <input type="text" name="maxFiyat" class="form-control m-2" />
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<h3 class="text-center">Kurslar</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kurs adı</th>
+            <th>Sınıf</th>
+            <th>İli</th>
+            <th>ilçesi</th>
+            <th>Fiyatı</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.kursAdi</td>
+                <td>@item.Siniflar.sinifAdi</td>
+                <td>@item.Ilce.Sehir.SehirAdi</td>
+                <td>@item.Ilce.ilceAdi</td>
+                <td>@item.fiyat</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Duzenle", "Kurs", new{kursId=item.kursId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Sil", "Kurs", new{kursId=item.kursId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="m-4">
+    <a class="btn btn-danger" asp-controller="Kurs" asp-action="Ekle" asp-area="">Yeni Kurs Ekle</a>
+</div>

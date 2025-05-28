@@ -1,0 +1,72 @@
+﻿@model hafta_8_emlak_b.Models.Otomotiv.Otomotiv
+@{
+    ViewData["Title"] = "Otomobili Düzenle";
+}
+
+<h3 class="text-center text-capitalize">Seçili Otomobil Bilgilerini Güncelle</h3>
+
+<form class="p-3" asp-controller="Otomotiv" asp-action="Duzenle" method="post">
+    <input type="hidden" asp-for="otoId" />
+
+    <div class="m-2">
+        <label>Araç Adını Giriniz:</label>
+        <input class="form-control" asp-for="otoAd" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Yılını Giriniz</label>
+        <input class="form-control" asp-for="otoYil" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Kilometresini Giriniz</label>
+        <input class="form-control" asp-for="otoKm" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Rengini Giriniz</label>
+        <input class="form-control" asp-for="otoRenk" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Fiyatını Giriniz</label>
+        <input class="form-control" asp-for="otoFiyat" />
+    </div>
+
+    <div class="m-2">
+        <label>Araç Markasını Giriniz</label>
+        <select class="form-control" asp-for="markaId" asp-items="@(new SelectList(ViewBag.Markalar, "markaId", "markaAd"))">
+            <option value="">Araç Markasını Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Vites Türünü Seçiniz</label>
+        <select class="form-control" asp-for="vitesId" asp-items="@(new SelectList(ViewBag.Vitesler, "vitesId", "vitesAdi"))">
+            <option value="">Vites Türünü Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>Yakıt Türünü Seçiniz</label>
+        <select class="form-control" asp-for="yakitId" asp-items="@(new SelectList(ViewBag.Yakitlar, "yakitId", "yakitName"))">
+            <option value="">Yakıt Türünü Seçiniz</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>İl Seçin</label>
+        <select class="form-control" id="sehir" onchange="getIlceler()" asp-items="@(new SelectList(ViewBag.Sehirler, "Plaka", "SehirAdi"))">
+            <option value="@ViewBag.SeciliSehirId">@ViewBag.SeciliSehirAd</option>
+        </select>
+    </div>
+
+    <div class="m-2">
+        <label>İlçe Seçin</label>
+        <select class="form-control" id="ilce" asp-for="ilceId">
+            <option value="@ViewBag.SeciliIlceId">@ViewBag.SeciliIlceAd</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+</form>

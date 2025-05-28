@@ -1,0 +1,77 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.Emlak.Emlak>
+@{
+    ViewData["Title"] = "Emlak";
+}
+
+<h4 class="text-black">Tabloyu Filtrele</h4>
+
+<form asp-controller="Emlak" asp-action="Index">
+    <label>Şehir</label>
+    <select id="sehir" class="form-control m-2" onchange="getIlceler()">
+        <option value="">Tüm Şehirler</option>
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <option value="@sehir.Plaka">@sehir.SehirAdi</option>
+        }
+    </select>
+
+
+    <label>İlçe</label>
+    <select id="ilce" class="form-control m-2" name="ilceId">
+        <option value="">Tüm İlçeler</option>
+    </select>
+
+    <label>Kategori</label>
+    <select name="kategoriId" class="form-control m-2">
+        <option value="">Kategoriler</option>
+        @foreach (var kate in ViewBag.Kategoriler)
+        {
+            <option value="@kate.KatId">@kate.KatAdi</option>
+        }
+    </select>
+
+    <label>Fiyat Aralığı</label>
+    <input type="text" name="minFiyat" class="form-control m-2" />
+    <input type="text" name="maxFiyat" class="form-control m-2" />
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<h3 class="text-center">Emlaklar</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Emlak adı</th>
+            <th>Emlak Türü</th>
+            <th>İli</th>
+            <th>ilçesi</th>
+            <th>Fiyatı</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmlakAdi</td>
+                <td>@item.Kategori.KatAdi</td>
+                <td>@item.Ilce.Sehir.SehirAdi</td>
+                <td>@item.Ilce.ilceAdi</td>
+                <td>@item.Fiyat</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Duzenle", "Emlak", new{emlakid=item.EmlakId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Sil", "Emlak", new{emlakid=item.EmlakId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="m-4">
+    <a class="btn btn-danger" asp-controller="Emlak" asp-action="Ekle" asp-area="">Yeni Emlak Ekle</a>
+</div>

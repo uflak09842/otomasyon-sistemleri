@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\hafta 8 emlak b.props" />
+</Project>

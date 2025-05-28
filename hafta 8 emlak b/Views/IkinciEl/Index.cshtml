@@ -1,0 +1,88 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.IkinciEl.IkinciEl>
+@{
+    ViewData["Title"] = "Ikinci El";
+}
+
+<h4 class="text-black">Tabloyu Filtrele</h4>
+
+<form asp-controller="IkinciEl" asp-action="Index" method="get">
+    <label>Şehir</label>
+    <select id="sehir" class="form-control m-2" onchange="getIlceler()">
+        <option value="">Tüm Şehirler</option>
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <option value="@sehir.Plaka">@sehir.SehirAdi</option>
+        }
+    </select>
+
+
+    <label>İlçe</label>
+    <select id="ilce" class="form-control m-2" name="ilceId">
+        <option value="">Tüm İlçeler</option>
+    </select>
+
+    <label>Kategori</label>
+    <select name="ukId" class="form-control m-2">
+        <option value="">Tüm Kategoriler</option>
+        @foreach (var kate in ViewBag.UrunKategoriler)
+        {
+            <option value="@kate.ukId">@kate.ukAdi</option>
+        }
+    </select>
+
+    <label>Durumu</label>
+    <select name="dId" class="form-control m-2">
+        <option value="">Tüm Durumlar</option>
+        @foreach(var item in ViewBag.UrunDurumlar)
+        {
+            <option value="@item.durumId">@item.durumAdi</option>
+        }
+    </select>
+
+    <label>Fiyat Aralığı</label>
+    <input type="text" name="minFiyat" class="form-control m-2" />
+    <input type="text" name="maxFiyat" class="form-control m-2" />
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<h3 class="text-center">Ikinci Eller</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Ürün Türü</th>
+            <th>İli</th>
+            <th>ilçesi</th>
+            <th>Fiyatı</th>
+            <th>Durumu</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.urunBaslik</td>
+                <td>@item.UrunKategori.ukAdi</td>
+                <td>@item.Ilce.Sehir.SehirAdi</td>
+                <td>@item.Ilce.ilceAdi</td>
+                <td>@item.urunFiyat ₺</td>
+                <td>@item.UrunDurum.durumAdi</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Duzenle", "IkinciEl", new{ikId=item.urunId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Sil", "IkinciEl", new{ikId=item.urunId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="m-4">
+    <a class="btn btn-danger" asp-controller="IkinciEl" asp-action="Ekle" asp-area="">Yeni İlan Oluştur</a>
+</div>

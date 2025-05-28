@@ -1,0 +1,94 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.Elektronik.Kulaklik>
+
+<form asp-controller="Elektronik" asp-action="Kulakliklar" method="get">
+    <a class="btn btn-dark" asp-controller="Elektronik" asp-action="Index" asp-area="">Geri</a>
+    <select name="sesCikis" class="form-control m-2">
+        <option value="">Tüm Ses Çıkış Tipleri</option>
+        @foreach (var item in ViewBag.SesCikislar)
+        {
+            <option value="@item.sesCikisId">@item.sesCikisTur</option>
+        }
+    </select>
+
+    <select name="baglantiTip" class="form-control m-2">
+        <option value="">Tüm Bağlantı Seçenekleri</option>
+        @foreach (var item in ViewBag.BaglantiTipler)
+        {
+            <option value="@item.baglantiTipId">@item.baglatiTipi</option>
+        }
+    </select>
+
+    <select name="bluetooth" class="form-control m-2">
+        <option value="">Bluetooth Seçenekleri</option>
+        <option value="true">Var</option>
+        <option value="false">Yok</option>
+    </select>
+
+    <select name="btStandart" class="form-control m-2">
+        <option value="">Bluetooth Versiyon Seçenekleri</option>
+        @foreach (var item in ViewBag.BtStandartlar)
+        {
+            <option value="@item.btStandartId">@item.btStandart</option>
+        }
+    </select>
+
+    <select name="mikrofon" class="form-control m-2">
+        <option value="">Mikrofon Seçenekleri</option>
+        <option value="true">Var</option>
+        <option value="false">Yok</option>
+    </select>
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<a class="btn btn-danger" asp-controller="Elektronik" asp-action="KulaklikEkle" asp-area="">Yeni Kulaklık Ekle</a>
+
+<h3 class="text-center">Kulaklıklar</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kulaklık Adı</th>
+            <th>Ses Çıkışı</th>
+            <th>Bağlantı Tipi</th>
+            <th>Bluetooth</th>
+            <th>Bluetooth Standartı</th>
+            <th>Mikrofon</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kulaklik in Model)
+        {
+            <tr>
+                <td>@kulaklik.kulaklikAdi</td>
+                <td>@kulaklik.SesCikis.sesCikisTur</td>
+                <td>@kulaklik.BaglantiTip.baglatiTipi</td>
+                @if (kulaklik.Bluetooth.btVar)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                <td>@kulaklik.BtStandart.btStandart</td>
+                @if (kulaklik.Mikrofon.mikrofonVar)
+                {
+                    <td>Var</td>
+                }
+                else
+                {
+                    <td>Yok</td>
+                }
+                <td>@kulaklik.fiyat</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("KulaklikDuzenle", "Elektronik", new{kulaklikId=kulaklik.kulaklikId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("KulaklikSil", "Elektronik", new{kulaklikId=kulaklik.kulaklikId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

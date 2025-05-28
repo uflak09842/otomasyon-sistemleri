@@ -1,0 +1,114 @@
+﻿@model IEnumerable<hafta_8_emlak_b.Models.Otomotiv.Otomotiv>
+@{
+    ViewData["Title"] = "Otomotiv";
+}
+
+<h4 class="text-black">Tabloyu Filtrele</h4>
+
+<form asp-controller="Otomotiv" asp-action="Index">
+    <label>Şehir</label>
+    <select id="sehir" class="form-control m-2" onchange="getIlceler()">
+        <option value="">Tüm Şehirler</option>
+        @foreach (var sehir in ViewBag.Sehirler)
+        {
+            <option value="@sehir.Plaka">@sehir.SehirAdi</option>
+        }
+    </select>
+
+
+    <label>İlçe</label>
+    <select id="ilce" class="form-control m-2" name="ilceId">
+        <option value="">Tüm İlçeler</option>
+    </select>
+
+    <label>Marka</label>
+    <select name="markaId" class="form-control m-2">
+        <option value="">Tüm Markalar</option>
+        @foreach (var item in ViewBag.Markalar)
+        {
+            <option value="@item.markaId">@item.markaAd</option>
+        }
+    </select>
+
+    <label>Yakıt Türü</label>
+    <select name="yakitId" class="form-control m-2">
+        <option value="">Tüm Yakıt Türleri</option>
+        @foreach(var item in ViewBag.Yakitlar)
+        {
+            <option value="@item.yakitId">@item.yakitName</option>
+        }
+    </select>
+
+    <label>Vites Türü</label>
+    <select name="vitesId" class="form-control m-2">
+        <option value="">Tüm Vites Türleri</option>
+        @foreach(var item in ViewBag.Vitesler)
+        {
+            <option value="@item.vitesId">@item.vitesAdi</option>
+        }
+    </select>
+
+    <label>Yıl Aralığı</label>
+    <input type="text" name="otoMinYil" class="form-control m-2"/>
+    <input type="text" name="otoMaxYil" class="form-control m-2"/>
+
+    <label>Km Aralığı</label>
+    <input type="text" name="otoMinKm" class="form-control m-2" />
+    <input  type="text" name="otoMaxKm" class="form-control m-2"/>
+
+    <label>Fiyat Aralığı</label>
+    <input type="text" name="minFiyat" class="form-control m-2" />
+    <input type="text" name="maxFiyat" class="form-control m-2" />
+
+    <button type="submit">Filtrele</button>
+</form>
+
+<h3 class="text-center">Araçlar</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Otomobil Ad</th>
+            <th>Markası</th>
+            <th>Yılı</th>
+            <th>Kilometresi</th>
+            <th>Vites Türü</th>
+            <th>Yakıt Türü</th>
+            <th>Rengi</th>
+            <th>İl</th>
+            <th>İlçe</th>
+            <th>Fiyatı</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.otoAd</td>
+                <td>@item.Marka.markaAd</td>
+                <td>@item.otoYil</td>
+                <td>@item.otoKm</td>
+                <td>@item.Vites.vitesAdi</td>
+                <td>@item.Yakit.yakitName</td>
+                <td>@item.otoRenk</td>
+                <td>@item.Ilce.Sehir.SehirAdi</td>
+                <td>@item.Ilce.ilceAdi</td>
+                <td>@item.otoFiyat</td>
+                
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Duzenle", "Otomotiv", new{otoid=item.otoId})">Düzenle</a>
+                </td>
+
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("Sil", "Otomotiv", new{otoid=item.otoId})">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="m-4">
+    <a class="btn btn-danger" asp-controller="Otomotiv" asp-action="Ekle" asp-area="">Yeni Araba Ekle</a>
+</div>
